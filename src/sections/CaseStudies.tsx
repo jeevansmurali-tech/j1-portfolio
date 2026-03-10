@@ -86,9 +86,25 @@ function AnimatedChart({ path, color }: { path: string, color: string }) {
 }
 
 export default function CaseStudies() {
+    // --- FIX START: Logic to detect mobile ---
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+    // --- FIX END ---
+
     return (
-        /* UPDATED: pl-10 pr-4 on mobile creates a safe left gutter for the 3D line while keeping the right side from clipping */
-        <section id="case-studies-section" className="relative w-full z-20 pb-20 pt-10 pl-10 pr-4 md:px-12">
+        /* FIX APPLIED: Added dynamic background color on mobile only. 
+           This 'covers' the glitchy global particles sitting at z-10 
+        */
+        <section
+            id="case-studies-section"
+            className={`relative w-full z-20 pb-20 pt-10 pl-10 pr-4 md:px-12 transition-colors duration-500 ${isMobile ? 'bg-[#030712]' : 'bg-transparent'}`}
+        >
             <div className="w-full max-w-7xl mx-auto mb-10">
                 <FadeInBlock delay="0ms">
                     <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-emerald-400 block mb-2">Selected Work</span>
