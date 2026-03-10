@@ -146,8 +146,10 @@ function ParticleField() {
 
             // --- SMART SPLIT-LINE MORPH ---
             const lineY = (i / count) * 20 - 10;
-            // The safe left-edge value
-            const targetLineX = isMobile ? -0.9 : 0;
+
+            // THE FIX: Changed -0.9 to -10. 
+            // This moves the particles safely off-screen on mobile without breaking the transition.
+            const targetLineX = isMobile ? -10 : 0;
 
             finalX = THREE.MathUtils.lerp(finalX, targetLineX, csProgress);
             finalY = THREE.MathUtils.lerp(finalY, lineY, csProgress);
