@@ -84,7 +84,7 @@ function App() {
         </h1>
 
         <p className="text-lg md:text-xl text-slate-400 mb-12 max-w-2xl leading-relaxed px-4 md:px-0">
-          Scaling founder-led niche brands through data-driven Meta ads, Google Ads, and high-converting marketing automations.
+          Scale with Substance. I build data-driven growth systems for D2C brands that turn paid media into long-term customer loyalty, without compromising your brand truth.
         </p>
 
         {/* HERO BUTTONS WITH SMART SMOOTH SCROLL */}

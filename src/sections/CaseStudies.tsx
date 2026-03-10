@@ -6,28 +6,28 @@ const CASE_STUDIES = [
         problem: "Strong product-market fit but near-zero digital traction with high ad spend yielding poor returns.",
         execution: ["Full-funnel ownership across Meta and Google Ads.", "Strategic SEO foundation paired with high-intent video content."],
         results: ["500% Revenue Growth", "Established Category Authority"], pdf: "/case-study-agro.pdf",
-        quote: "Jeevan had a deep understanding of our brand and our vision. With that, he was also able to find the right product to audience fitment and the best form of content..."
+        quote: "Jeevan was very proactive, and always a step ahead. The growth we saw over the year was remarkable, but what made it sustainable was the consistency he brought to every touchpoint."
     },
     {
         industry: "Sustainable Lifestyle D2C", metric: "950%", duration: "revenue in 6 months", color: "#00e5a0", chartPath: "M5,95 L25,90 L45,70 L65,40 L85,20 L100,5",
         problem: "Category noise and inconsistent sales with no differentiated strategy for seasonal demand.",
         execution: ["Introduced personalized product lines to strengthen value proposition.", "Deployed tightly segmented Meta Ads timed around seasonal windows."],
         results: ["9.5x Revenue Scaling", "4.5x ROAS Maintained"], pdf: "/case-study-sustainable.pdf",
-        quote: "Jeevan had a deep understanding of our brand and our vision. With that, he was also able to find the right product to audience fitment and the best form of content..."
+        quote: "He understood our brand, moved fast, and the results spoke for themselves. Genuinely great to work with and the kind of person you want in your corner."
     },
     {
         industry: "Personal Care", metric: "200%", duration: "jump in 90 days", color: "#44ccff", chartPath: "M5,90 C25,90 45,80 65,60 S85,20 100,20",
         problem: "Driving top-of-funnel traffic but visitors weren't buying due to a fragmented customer journey.",
         execution: ["Rebuilt on-site conversion experience through CRO.", "Deployed WhatsApp chat flows to re-engage buyers at key drop-off points."],
         results: ["2x Conversion Lift", "40% Blended CPA Reduction"], pdf: "/case-study-care.pdf",
-        quote: "Jeevan had a deep understanding of our brand and our vision. With that, he was also able to find the right product to audience fitment and the best form of content..."
+        quote: "Jeevan is one of the most detail oriented performance marketers we've worked with. He doesn't take briefs at face value, he interrogates, analyses, and comes back with ideas that actually move the needle."
     },
     {
         industry: "Home Decor (Omnichannel)", metric: "Local", duration: "Intent Domination", color: "#7b8cff", chartPath: null,
         problem: "A furniture brand with a showroom and online store that weren't communicating.",
         execution: ["Built omnichannel strategy marrying radius-based Google Ads with GBP optimization.", "Refined geo-posts and review management to dominate local intent."],
         results: ["Consistent Online Sales", "Increased Showroom Footfall"], pdf: "/case-study-furniture.pdf",
-        quote: "Jeevan had a deep understanding of our brand and our vision. With that, he was also able to find the right product to audience fitment and the best form of content..."
+        quote: "Jeevan didn't just run campaigns — he understood the full customer journey and built around it. The lift in footfall and online sales was proof that his thinking was always bigger than the ad account."
     }
 ];
 
