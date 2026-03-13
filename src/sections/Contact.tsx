@@ -1,25 +1,6 @@
-import { useState } from 'react';
+import { InlineWidget } from 'react-calendly';
 
 export default function Contact() {
-    const [isSubmitted, setIsSubmitted] = useState(false);
-
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        const formData = new FormData(e.currentTarget);
-
-        // Your live Web3Forms Access Key
-        formData.append("access_key", "fcb4e559-3054-41ff-89d3-f43e0e55ac53");
-
-        const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            body: formData
-        });
-
-        if (response.ok) {
-            setIsSubmitted(true);
-        }
-    };
-
     return (
         <section id="contact-section" className="relative min-h-screen py-32 px-8 z-10 flex flex-col items-center justify-center">
             <div className="w-full max-w-7xl mx-auto">
@@ -31,38 +12,27 @@ export default function Contact() {
 
                 <div className="grid lg:grid-cols-2 gap-12 items-start">
 
-                    {/* LEFT COLUMN: THE FORM */}
-                    <div className="bg-slate-900/40 backdrop-blur-xl border border-white/10 p-10 rounded-3xl shadow-2xl flex flex-col justify-center">
-                        <h3 className="text-2xl font-bold text-white mb-2 text-emerald-400">Put the Ball in my Court</h3>
-                        <p className="text-slate-400 mb-8 text-sm">Drop your details below and I'll bring a growth strategy to your inbox.</p>
+                    {/* LEFT COLUMN: CALENDLY WIDGET */}
+                    <div className="bg-slate-900/40 backdrop-blur-xl border border-white/10 pt-8 pb-4 px-4 rounded-3xl shadow-2xl flex flex-col min-h-[650px] md:min-h-[750px] relative overflow-hidden">
+                        {/* Subtle background glow */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/5 to-transparent pointer-events-none"></div>
 
-                        {!isSubmitted ? (
-                            <form onSubmit={handleSubmit} className="space-y-6">
-                                <div className="grid md:grid-cols-2 gap-6">
-                                    <div className="flex flex-col gap-2">
-                                        <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Name</label>
-                                        <input required name="name" type="text" placeholder="John Doe" className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500/50 transition-colors" />
-                                    </div>
-                                    <div className="flex flex-col gap-2">
-                                        <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Email</label>
-                                        <input required name="email" type="email" placeholder="john@brand.com" className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500/50 transition-colors" />
-                                    </div>
-                                </div>
-                                <div className="flex flex-col gap-2">
-                                    <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Message</label>
-                                    <textarea required name="message" rows={4} placeholder="Tell me about your growth goals..." className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500/50 transition-colors resize-none" />
-                                </div>
-                                <button type="submit" className="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-4 rounded-xl transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)]">
-                                    Send Message
-                                </button>
-                            </form>
-                        ) : (
-                            <div className="py-20 text-center">
-                                <div className="text-5xl mb-4 text-emerald-400">✓</div>
-                                <h4 className="text-2xl font-bold text-white mb-2">Message Received</h4>
-                                <p className="text-slate-400">I'll be in touch within 24 hours.</p>
-                            </div>
-                        )}
+                        <div className="px-4 mb-4 relative z-10">
+                            <h3 className="text-2xl font-bold text-white mb-2 text-emerald-400">Book a Discovery Call</h3>
+                            <p className="text-slate-400 text-sm">Pick a time that works for you, and let's map out your growth trajectory.</p>
+                        </div>
+
+                        <div className="w-full h-full flex-grow relative z-10 rounded-xl overflow-hidden">
+                            <InlineWidget
+                                url="https://calendly.com/YOUR_LINK_HERE"
+                                styles={{ height: '100%', width: '100%' }}
+                                pageSettings={{
+                                    backgroundColor: '0f172a', // Slate-900 hex to blend with the card
+                                    textColor: 'ffffff',       // White text
+                                    primaryColor: '10b981'     // Emerald-500 accent
+                                }}
+                            />
+                        </div>
                     </div>
 
                     {/* RIGHT COLUMN: QUICK CONNECTS */}
