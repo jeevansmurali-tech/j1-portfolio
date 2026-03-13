@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function FloatingCTA() {
     // This function smoothly scrolls the page down to your contact section
     const scrollToContact = () => {
