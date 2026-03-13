@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ArrowRight, Zap } from 'lucide-react';
 import HeroCanvas from './HeroCanvas';
 import ResultsSection from './ResultsSection';
+import FloatingCTA from './FloatingCTA'; // <-- Added the import here
 
 function App() {
   const heroRef = useRef(null);
@@ -106,6 +107,9 @@ function App() {
 
       {/* Results Section */}
       <ResultsSection />
+
+      {/* Floating CTA Button */}
+      <FloatingCTA />
     </div>
   );
 }
