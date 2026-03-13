@@ -22,14 +22,16 @@ export default function Contact() {
                             <p className="text-slate-400 text-sm">Pick a time that works for you, and let's map out your growth trajectory.</p>
                         </div>
 
-                        <div className="w-full h-full flex-grow relative z-10 rounded-xl overflow-hidden">
+                        <div className="w-full relative z-10 rounded-xl overflow-hidden min-h-[700px]">
                             <InlineWidget
-                                url="https://calendly.com/jeevan-s-murali/15min?hide_gdpr_banner=1&primary_color=10b981"
-                                styles={{ height: '100%', width: '100%' }}
+                                // Make sure this is JUST the clean link. No "?" at the end!
+                                url="https://calendly.com/jeevan-s-murali/15min"
+                                styles={{ height: '700px', width: '100%' }}
                                 pageSettings={{
-                                    backgroundColor: '0f172a', // Slate-900 hex to blend with the card
-                                    textColor: 'ffffff',       // White text
-                                    primaryColor: '10b981'     // Emerald-500 accent
+                                    backgroundColor: '0f172a',
+                                    textColor: 'ffffff',
+                                    primaryColor: '10b981',
+                                    hideGdprBanner: true // Let the library handle hiding the banner
                                 }}
                             />
                         </div>
