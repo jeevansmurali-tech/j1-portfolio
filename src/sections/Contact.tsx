@@ -24,7 +24,7 @@ export default function Contact() {
 
                         <div className="w-full h-full flex-grow relative z-10 rounded-xl overflow-hidden">
                             <InlineWidget
-                                url="https://calendly.com/YOUR_LINK_HERE"
+                                url="https://calendly.com/jeevan-s-murali/15min?hide_gdpr_banner=1&primary_color=10b981"
                                 styles={{ height: '100%', width: '100%' }}
                                 pageSettings={{
                                     backgroundColor: '0f172a', // Slate-900 hex to blend with the card
