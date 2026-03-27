@@ -1,4 +1,33 @@
+import { useState, useEffect } from 'react';
+
 export default function FloatingCTA() {
+    // State to manage visibility
+    const [isVisible, setIsVisible] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.innerHeight + window.scrollY;
+            const bottomPosition = document.documentElement.scrollHeight;
+
+            // If the user is within 800px of the bottom, hide the button
+            // You can increase/decrease this number to trigger it earlier/later
+            if (bottomPosition - scrollPosition < 800) {
+                setIsVisible(false);
+            } else {
+                setIsVisible(true);
+            }
+        };
+
+        // Listen for scrolling
+        window.addEventListener('scroll', handleScroll);
+
+        // Fire it once on load just in case they refresh at the bottom of the page
+        handleScroll();
+
+        // Cleanup the listener when component unmounts
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     // This function smoothly scrolls the page down to your contact section
     const scrollToContact = () => {
         const section = document.getElementById('contact-section');
@@ -10,13 +39,15 @@ export default function FloatingCTA() {
     return (
         <button
             onClick={scrollToContact}
-            className="fixed z-[100] flex items-center justify-center transition-all duration-300 ease-out
+            className={`fixed z-[100] flex items-center justify-center transition-all duration-500 ease-out
                        border border-white/10 bg-[#020617]/70 backdrop-blur-md text-emerald-400
                        shadow-[0_0_15px_rgba(16,185,129,0.15)] hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] hover:scale-105
                        /* SHAPE: Always a pill */
                        h-12 px-6 rounded-full w-max
                        /* POSITION: Bottom-Center on Mobile -> Bottom-Right on Desktop */
-                       bottom-6 left-1/2 -translate-x-1/2 md:bottom-10 md:left-auto md:right-10 md:translate-x-0"
+                       bottom-6 left-1/2 -translate-x-1/2 md:bottom-10 md:left-auto md:right-10 md:translate-x-0
+                       /* VISIBILITY TOGGLE */
+                       ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         >
             {/* Minimalist Mail Icon */}
             <svg
